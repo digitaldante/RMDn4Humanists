@@ -1,0 +1,87 @@
+---
+title: "RMarkdown for Humanists"
+author: "Carol Chiodo"
+date: "4/23/2022"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Getting Started with RMarkdown
+
+This is an RMarkdown document. RMarkdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see the information page <http://rmarkdown.rstudio.com>.
+
+Some preliminary considerations: 
+
+At the very top of this document, in lines 2-5, you will see the YAML header, an open data interchange format that can include: title, author, date, and the output. The header follows a structure with key, value pairs separated by a colon. While in this case our output is a pdf, RMarkdown can also generate other file formats such as HTML or Word documents, presentation slides, or even interactive documents or slides using Shiny (You can learn more about Shiny here: https://shiny.rstudio.com) Each of these document types have any number of possible key, value pairs. R Markdown also includes several prepackaged templates. 
+
+One advantage of R Markdown is that it allows us to choose whether we want to display the code plus the results, only the results, or only the code. We do so using several different functions which control the code, the output, or both. These functions are called echo (controlling the code), eval (controlling the output), and include (which controls both). 
+
+If we echo = FALSE prevents code, but not the results from appearing in the finished file. This is a useful way to embed figures, for example. So, we would write the following to suppress the code box in our final document
+
+
+This is echo set to **FALSE**
+```{r, echo=FALSE}
+x <- 3
+print(x)
+```
+
+
+When you click the **Knit** button in the editing pane tab of the open Rmd file, a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. 
+
+Note: if you do not specify a parameter, the system will default to echo = TRUE, which will reveal the code chunk
+
+If you look at the code above, you will see three tics on line 24. That signals that you are embedding a code chunk. The second set of ticks in line 27 mark the conclusion of the code chunk. 
+Now let's try embedding an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+Try changing it to TRUE, or eliminating it altogether. Do you see the code chunk in your knit file?
+
+
+
+## Why should you use R Markdown? 
+
+Let's have a look at the last few pieces of code that we used for the examples above. You see the code chunks, you see a lot of explanation of what we are trying to do with certain types of code. I would argue that in even in using a simple R Markdown document like this one, you are creating **reproducible research**. Reproducible for you, because you can go back to this and see exactly what you did to either suppress or reveal that code box. Okay, sure, you might argue, that's helpful for me to retrace my learning curve, but why would my learning curve be of any use to others? Well, it's my hope that in learning to use R Markdown, you will develop a habit for it. And, as you progress in ever increasing sophisticated uses for R, your handy Markdown documents will allow others to follow in your wake. Using R Markdown, you will be laying some crucial groundwork for best practices in reproducible research. 
+
+
+
+## Working with RStudio
+
+For the context of this workshop, you will be working with the integrated development environment (IDE) RStudio. The IDE is split into four panes and each is customizable to suit your preference.   
+![](//Users/cac3227/Desktop/RWorkshop_media/Interface.png)
+
+As you can see, you write code in the built in editor (this is also where you will be creating your RMarkdown document), you execute it in the console. A handy shortcut between these two panes is one that sends the code directly to the console: CTRL-Enter or CTRL-R in Windows, and COMMAND-RETURN on a Mac. 
+
+
+## Fun with Functions
+RStudio has autocomplete options that pop up as you are typing in either the editor or the console. The editor also has handy color-themed code highlighting and bracket matching. Let's see how these work while learning a little bit more about calling functions. 
+
+Earlier, we looked at the ways that we can embed code chunks into our RMarkdown file. We used *echo = TRUE* to reveal the code; *eval* to control the output; and *include* to manage both. These are part of a collection of commands known as functions. R has a large collections of built in functions that are called up using the following: 
+
+  function_name(argument1 = value1, argument2 = value2, ...)
+  
+  Let's try and make use of some autocomplete options while learning more about functions. Try typing se in the console and hit Tab. A pop up will show you possible completions. There are a lot, so let's add a q to find the one we are looking for. There is also a floating tooltip which appears, reminding you of the function's arguments and purpose. And, if you need more information on that count, you can always hit F1 and find additional help in the lower right hand pane under the **help** tab
+  
+  Now, if we return to our RMarkdown document in the editor (upper left pane), in order for us to record this in our document, we need to open the code chunk with three tics and a curly bracket. We set echo to TRUE so we will have both the code chunk and the output in output in our code box, and then we will insert the function seq()
+  
+  ```{r,echo = TRUE}
+  seq(1,10 )
+  
+  ```
+  
+
