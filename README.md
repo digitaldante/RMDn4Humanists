@@ -1,2 +1,2 @@
 # RMDn4Humanists
-Tutorial for Humanists starting out with R using RStudio and RMarkdown
+A humanist friendly tutorial for those starting out with R, using RStudio and RMarkdown

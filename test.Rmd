@@ -11,7 +11,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Getting Started with RMarkdown
 
-This is an RMarkdown document. RMarkdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see the information page <http://rmarkdown.rstudio.com>.
+This is an RMarkdown document. RMarkdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. You can use a single document to save and execute code, and generate high quality documents like this one that can be shared with an audience.
+
+For more details on using R Markdown see the information page <http://rmarkdown.rstudio.com>.
 
 Some preliminary considerations: 
 
